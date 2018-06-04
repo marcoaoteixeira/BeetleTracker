@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{803EA85F-5744-4297-A2D7-39DBBA88A59C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nameless.BeetleTracker</RootNamespace>
+    <AssemblyName>Nameless.BeetleTracker.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Application.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Application.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Extras.DynamicProxy, Version=4.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Extras.DynamicProxy.4.4.0\lib\net45\Autofac.Extras.DynamicProxy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Mvc5.Owin.4.0.1\lib\net45\Autofac.Integration.Mvc.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=4.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.Owin.4.2.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.WebApi2.Owin.4.0.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Owin.5.2.6\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="ApplicationInfo.cs" />
+    <Compile Include="ApplicationServiceRegistration.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Aspect\EventSourcingInterceptor.cs" />
+    <Compile Include="Helpers\WebHelper.cs" />
+    <Compile Include="IApplicationContext.cs" />
+    <Compile Include="IApplicationInfo.cs" />
+    <Compile Include="EntityState.cs" />
+    <Compile Include="Identity\IdentityRole.cs" />
+    <Compile Include="Identity\ApplicationSignInManager.cs" />
+    <Compile Include="Identity\IdentityUser.cs" />
+    <Compile Include="Identity\IdentityUserClaim.cs" />
+    <Compile Include="Identity\IdentityUserLogin.cs" />
+    <Compile Include="Identity\IdentityUserManager.cs" />
+    <Compile Include="Identity\Services\SmsService.cs" />
+    <Compile Include="Identity\Services\EmailService.cs" />
+    <Compile Include="Identity\Stores\Mapper.cs" />
+    <Compile Include="Identity\Stores\Resources\Role\SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Identity\Stores\Resources\User\SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Identity\Stores\RoleStore.cs" />
+    <Compile Include="Identity\Services\IEmailService.cs" />
+    <Compile Include="Identity\Services\ISmsService.cs" />
+    <Compile Include="Identity\Stores\UserStore.cs" />
+    <Compile Include="IUserInfo.cs" />
+    <Compile Include="Mvc\Extensions\HtmlHelperExtension.cs" />
+    <Compile Include="Mvc\Extensions\ModelStateDictionaryExtension.cs" />
+    <Compile Include="Mvc\Filters\NotifyFilter.cs" />
+    <Compile Include="Mvc\Filters\StopwatchActionFilter.cs" />
+    <Compile Include="Mvc\Filters\StopwatchFilterProvider.cs" />
+    <Compile Include="Mvc\MvcController.cs" />
+    <Compile Include="Mvc\Results\ChallengeResult.cs" />
+    <Compile Include="Mvc\UI\WebViewPage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\ApplicationContextMiddleware.cs" />
+    <Compile Include="Security\ApplicationOAuthProvider.cs" />
+    <Compile Include="Security\SecurityData.cs" />
+    <Compile Include="UserInfo.cs" />
+    <Compile Include="WebApi\Filters\CheckModelForNullAttribute.cs" />
+    <Compile Include="WebApi\Filters\StopwatchActionFilter.cs" />
+    <Compile Include="WebApi\Filters\StopwatchFilterProvider.cs" />
+    <Compile Include="WebApi\Filters\ValidateModelStateAttribute.cs" />
+    <Compile Include="WebApi\Results\ChallengeResult.cs" />
+    <Compile Include="WebApi\WebApiController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Identity\Stores\Resources\Role\SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Identity\Stores\Resources\User\SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Core\Nameless.BeetleTracker.Core.csproj">
+      <Project>{f767d056-af41-426c-88f6-f66899967bef}</Project>
+      <Name>Nameless.BeetleTracker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Framework.Impl\Nameless.BeetleTracker.Framework.Impl.csproj">
+      <Project>{3827dccd-9020-467c-96d8-50107d4768c5}</Project>
+      <Name>Nameless.BeetleTracker.Framework.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Framework\Nameless.BeetleTracker.Framework.csproj">
+      <Project>{8db9729d-8f5b-460d-be5d-edf862bb6027}</Project>
+      <Name>Nameless.BeetleTracker.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nameless.BeetleTracker.IoC\Nameless.BeetleTracker.IoC.csproj">
+      <Project>{31ed85bb-57e8-4efe-81f0-61054d75b4bf}</Project>
+      <Name>Nameless.BeetleTracker.IoC</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Identity\Stores\Resources\Role\Update.sql" />
+    <Content Include="Identity\Stores\Resources\Role\Create.sql" />
+    <Content Include="Identity\Stores\Resources\Role\FindByName.sql" />
+    <Content Include="Identity\Stores\Resources\Role\FindById.sql" />
+    <Content Include="Identity\Stores\Resources\Role\Delete.sql" />
+    <Content Include="Identity\Stores\Resources\Role\ListAll.sql" />
+    <Content Include="Identity\Stores\Resources\User\AddRoleToUser.sql" />
+    <Content Include="Identity\Stores\Resources\User\AddUserClaim.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetRoleIdByName.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserAccessFailedCount.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserTwoFactorEnabled.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserPhoneNumber.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserPhoneNumber.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserPhoneNumberConfirmed.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserEmailConfirmed.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserLockoutEndDate.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserLockoutEnabled.sql" />
+    <Content Include="Identity\Stores\Resources\User\FindUserByEmail.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserEmail.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserPhoneNumberConfirmed.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserEmailConfirmed.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserLockoutEndDate.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserLockoutEnabled.sql" />
+    <Content Include="Identity\Stores\Resources\User\ResetUserAccessFailedCount.sql" />
+    <Content Include="Identity\Stores\Resources\User\IncrementUserAccessFailedCount.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserTwoFactorEnabled.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserSecurityStamp.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserPasswordHash.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserSecurityStamp.sql" />
+    <Content Include="Identity\Stores\Resources\User\SetUserEmail.sql" />
+    <Content Include="Identity\Stores\Resources\User\UserHasPasswordHash.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserPasswordHash.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUsers.sql" />
+    <Content Include="Identity\Stores\Resources\User\IsUserInRole.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserRoles.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserClaims.sql" />
+    <Content Include="Identity\Stores\Resources\User\RemoveUserFromRole.sql" />
+    <Content Include="Identity\Stores\Resources\User\RemoveUserClaim.sql" />
+    <Content Include="Identity\Stores\Resources\User\UpdateUser.sql" />
+    <Content Include="Identity\Stores\Resources\User\DeleteUser.sql" />
+    <Content Include="Identity\Stores\Resources\User\CreateUser.sql" />
+    <Content Include="Identity\Stores\Resources\User\FindUserByUserName.sql" />
+    <Content Include="Identity\Stores\Resources\User\FindUserById.sql" />
+    <Content Include="Identity\Stores\Resources\User\RemoveUserLogin.sql" />
+    <Content Include="Identity\Stores\Resources\User\GetUserLoginsByUser.sql" />
+    <Content Include="Identity\Stores\Resources\User\FindUserByUserLogin.sql" />
+    <Content Include="Identity\Stores\Resources\User\AddUserLogin.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+﻿@model HandleErrorInfo
+@{
+    Layout = "~/Views/Shared/_CleanLayout.cshtml";
+    ViewBag.Title = T("Unknown Error");
+    ViewBag.BodyClass = "error-page";
+}
+
+<div class="error-box">
+    <div class="error-logo">
+        <a href="@Url.Action("Index", "Home")"><b>Web</b>Application</a>
+    </div><!-- /.error-logo -->
+    <div class="error-box-body">
+        <p class="error-box-msg">@T("An unknown error occurs")</p>
+    </div><!-- /.error-box-body -->
+</div><!-- /.error-box -->

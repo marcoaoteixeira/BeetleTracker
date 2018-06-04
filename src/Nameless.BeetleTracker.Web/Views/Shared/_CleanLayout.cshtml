@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@Page.ApplicationName | @Page.Title</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="application/font-sfnt" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/FontAwesome.otf" />
+    <link rel="application/vnd.ms-fontobject" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot" />
+    <link rel="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg" />
+    <link rel="application/octet-stream" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf" />
+    <link rel="application/font-woff" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff" />
+    <link rel="application/font-woff2" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2" />
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/css/ionicons.min.css">
+    <link rel="application/vnd.ms-fontobject" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/fonts/ionicons.eot">
+    <link rel="image/svg+xml" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/fonts/ionicons.svg">
+    <link rel="application/octet-stream" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/fonts/ionicons.ttf">
+    <link rel="application/font-woff" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/fonts/ionicons.woff">
+    <link rel="application/font-woff2" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.0.0-19/fonts/ionicons.woff2">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- Bootstrap 4 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Application Resources -->
+    @if (IsDevelopmentEnvironment) {
+        <!-- Theme style -->
+        <link rel="stylesheet" href="~/wwwroot/css/adminlte.css">
+        <link rel="stylesheet" href="~/wwwroot/css/main.css?v=@Random">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="~/wwwroot/css/plugins/icheck/skins/square/blue.css">
+    } else {
+        <!-- Theme style -->
+        <link rel="stylesheet" href="~/wwwroot/css/adminlte.min.css">
+        <link rel="stylesheet" href="~/wwwroot/css/main.min.css">
+        <!-- iCheck -->
+        <link rel="stylesheet" href="~/wwwroot/css/plugins/icheck/skins/square/blue.min.css">
+    }
+    @RenderSection("styles", required: false)
+</head>
+<body class="hold-transition @ViewBag.BodyClass">
+    @RenderBody()
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <!-- iCheck -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+    <!-- Application Resources -->
+    @if (IsDevelopmentEnvironment) {
+        <script type="text/javascript" src="~/wwwroot/js/adminlte.js"></script>
+    } else {
+        <script type="text/javascript" src="~/wwwroot/js/adminlte.min.js"></script>
+    }
+    @RenderSection("scripts", required: false)
+</body>
+</html>

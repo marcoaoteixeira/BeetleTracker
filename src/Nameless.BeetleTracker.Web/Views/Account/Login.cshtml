@@ -1,0 +1,76 @@
+﻿@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/_CleanLayout.cshtml";
+    Page.ApplicationName = "BeetleTracker";
+    Page.Title = T["Log in"];
+    ViewBag.BodyClass = "login-page";
+}
+
+<div class="login-box">
+    <div class="login-logo">
+        <a href="@Url.Action("Index", "Home")"><b>Beetle</b>Tracker</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">@T["Sign in to start your session"]</p>
+            @using (Html.BeginForm("Login", "Account", FormMethod.Post)) {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(excludePropertyErrors: false)
+
+                <div class="form-group icon-left-side">
+                    <span class="fa fa-envelope icon-left-side"></span>
+                    @Html.TextBoxFor(_ => _.Email, new { @class = "form-control icon-left-side", placeholder = T["E-mail"] })
+                </div>
+                <div class="form-group icon-left-side">
+                    <span class="fa fa-lock icon-left-side"></span>
+                    @Html.PasswordFor(_ => _.Password, new { @class = "form-control icon-left-side", placeholder = T["Password"] })
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                @Html.CheckBoxFor(_ => _.RememberMe) @T["Remember me"]
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">@T["Sign In"]</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            }
+            <div class="social-auth-links text-center mb-3">
+                <p>- @T["OR"] -</p>
+                <a href="@Url.Action("SocialSignIn", "Account", new { target = "facebook" })" class="btn btn-block btn-primary">
+                    <i class="fa fa-facebook mr-2"></i> @T["Sign in using Facebook"]
+                </a>
+                <a href="@Url.Action("SocialSignIn", "Account", new { target = "google_plus" })" class="btn btn-block btn-danger">
+                    <i class="fa fa-google-plus mr-2"></i> @T["Sign in using Google+"]
+                </a>
+            </div>
+            <!-- /.social-auth-links -->
+            <p class="mb-1">
+                <a href="@Url.Action("ForgotPassword", "Account")">@T["I forgot my password"]</a>
+            </p>
+            <p class="mb-0">
+                <a href="@Url.Action("Register", "Account")" class="text-center">@T["Register a new membership"]</a>
+            </p>
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+}

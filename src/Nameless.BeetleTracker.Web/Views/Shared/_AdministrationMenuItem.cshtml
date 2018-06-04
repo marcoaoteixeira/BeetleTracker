@@ -1,0 +1,11 @@
+﻿<li class="header">@T("Administration")</li>
+<li class="treeview">
+    <a href="#">
+        <i class="fa fa-users"></i> <span>@T("Membership")</span>
+        <i class="fa fa-angle-left pull-right"></i>
+    </a>
+    <ul class="treeview-menu">
+        <li><a href="@Url.Action("UserManagement", "Membership")"><i class="fa fa-user"></i> @T("User management")</a></li>
+        <li><a href="@Url.Action("Settings", "Membership")"><i class="fa fa-gears"></i> @T("Settings")</a></li>
+    </ul>
+</li>

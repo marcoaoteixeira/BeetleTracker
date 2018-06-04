@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DB9729D-8F5B-460D-BE5D-EDF862BB6027}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nameless.BeetleTracker</RootNamespace>
+    <AssemblyName>Nameless.BeetleTracker.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Framework.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Framework.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\CacheDependency.cs" />
+    <Compile Include="Caching\CacheExtension.cs" />
+    <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Caching\FileCacheDependency.cs" />
+    <Compile Include="Caching\NullCache.cs" />
+    <Compile Include="Caching\TimeCacheDependency.cs" />
+    <Compile Include="Data\DatabaseExtension.cs" />
+    <Compile Include="Data\DataReaderExtension.cs" />
+    <Compile Include="Data\IDatabase.cs" />
+    <Compile Include="Data\IDbProviderSelector.cs" />
+    <Compile Include="Data\Parameter.cs" />
+    <Compile Include="Email\IEmailService.cs" />
+    <Compile Include="Email\Message.cs" />
+    <Compile Include="Email\MessagePriority.cs" />
+    <Compile Include="ErrorHandling\IExceptionPolicy.cs" />
+    <Compile Include="ErrorHandling\NullExceptionPolicy.cs" />
+    <Compile Include="EventSourcing\Bus\DefaultBus.cs" />
+    <Compile Include="EventSourcing\Bus\IBus.cs" />
+    <Compile Include="EventSourcing\Bus\NullBus.cs" />
+    <Compile Include="EventSourcing\Commands\ICommand.cs" />
+    <Compile Include="EventSourcing\Commands\ICommandDispatcher.cs" />
+    <Compile Include="EventSourcing\Commands\ICommandHandler.cs" />
+    <Compile Include="EventSourcing\Commands\NullCommandDispatcher.cs" />
+    <Compile Include="EventSourcing\Domains\AggregateRoot.cs" />
+    <Compile Include="EventSourcing\Domains\AggregateRootExtension.cs" />
+    <Compile Include="EventSourcing\Domains\IAggregateFactory.cs" />
+    <Compile Include="EventSourcing\Domains\IRepository.cs" />
+    <Compile Include="EventSourcing\Domains\ISession.cs" />
+    <Compile Include="EventSourcing\Events\EventBase.cs" />
+    <Compile Include="EventSourcing\Events\EventPublisherExtension.cs" />
+    <Compile Include="EventSourcing\Events\IEvent.cs" />
+    <Compile Include="EventSourcing\Events\IEventHandler.cs" />
+    <Compile Include="EventSourcing\Events\IEventPublisher.cs" />
+    <Compile Include="EventSourcing\Events\IEventStore.cs" />
+    <Compile Include="EventSourcing\Exceptions\AggregateNotFoundException.cs" />
+    <Compile Include="EventSourcing\Exceptions\AggregateOrEventMissingIDException.cs" />
+    <Compile Include="EventSourcing\Exceptions\ConcurrencyException.cs" />
+    <Compile Include="EventSourcing\Exceptions\EventsOutOfOrderException.cs" />
+    <Compile Include="EventSourcing\Exceptions\MissingParameterLessConstructorException.cs" />
+    <Compile Include="EventSourcing\Messages\IHandler.cs" />
+    <Compile Include="EventSourcing\Messages\IMessage.cs" />
+    <Compile Include="EventSourcing\Snapshots\ISnapshotStore.cs" />
+    <Compile Include="EventSourcing\Snapshots\ISnapshotStrategy.cs" />
+    <Compile Include="EventSourcing\Snapshots\Snapshot.cs" />
+    <Compile Include="EventSourcing\Snapshots\SnapshotAggregateRoot.cs" />
+    <Compile Include="EventSourcing\Utils\CompiledMethodInfo.cs" />
+    <Compile Include="EventSourcing\Utils\PrivateReflectionDynamicObject.cs" />
+    <Compile Include="IoC\ICompositionRoot.cs" />
+    <Compile Include="IoC\IResolver.cs" />
+    <Compile Include="IoC\IServiceRegistration.cs" />
+    <Compile Include="IoC\ResolverExtension.cs" />
+    <Compile Include="Localization\IPluralStringLocalizer.cs" />
+    <Compile Include="Localization\IStringLocalizer.cs" />
+    <Compile Include="Localization\IStringLocalizerFactory.cs" />
+    <Compile Include="Localization\LocalizableString.cs" />
+    <Compile Include="Localization\NullStringLocalizer.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\ILoggerFactory.cs" />
+    <Compile Include="Logging\LoggerExtension.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogLevelExtension.cs" />
+    <Compile Include="Logging\NullLogger.cs" />
+    <Compile Include="Logging\NullLoggerFactory.cs" />
+    <Compile Include="Notification\INotifier.cs" />
+    <Compile Include="Notification\NotifierExtension.cs" />
+    <Compile Include="Notification\NotifyEntry.cs" />
+    <Compile Include="Notification\NotifyType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PubSub\IPublisherSubscriber.cs" />
+    <Compile Include="PubSub\ISubscription.cs" />
+    <Compile Include="Search\DocumentIndexOptions.cs" />
+    <Compile Include="Search\IDocumentIndex.cs" />
+    <Compile Include="Search\IIndex.cs" />
+    <Compile Include="Search\IIndexProvider.cs" />
+    <Compile Include="Search\ISearchBit.cs" />
+    <Compile Include="Search\ISearchBuilder.cs" />
+    <Compile Include="Search\ISearchHit.cs" />
+    <Compile Include="Services\IClock.cs" />
+    <Compile Include="Environment\IHostingEnvironment.cs" />
+    <Compile Include="Settings\ISettingsStorage.cs" />
+    <Compile Include="Settings\SettingsBase.cs" />
+    <Compile Include="Settings\SettingsProxy.cs" />
+    <Compile Include="Settings\SettingsStorageExtension.cs" />
+    <Compile Include="Text\IDataBinder.cs" />
+    <Compile Include="Text\IInterpolator.cs" />
+    <Compile Include="Text\StringPadderDirection.cs" />
+    <Compile Include="Text\StringPadderFormatter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Core\Nameless.BeetleTracker.Core.csproj">
+      <Project>{f767d056-af41-426c-88f6-f66899967bef}</Project>
+      <Name>Nameless.BeetleTracker.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

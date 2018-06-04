@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_CleanLayout.cshtml";
+    ViewBag.Title = T("Confirm registration");
+    ViewBag.BodyClass = "confirm-registration-page";
+}
+<div class="confirm-registration-box">
+    <div class="confirm-registration-logo">
+        <a href="@Url.Action("Index", "Home")"><b>Web</b>Application</a>
+    </div>
+    <div class="confirm-registration-box-body">
+        <p class="confirm-registration-box-msg">@T("Register confirmation e-mail sent")</p>
+
+        <div class="callout callout-info">
+            <h4>@T("An e-mail was sent to you!")</h4>
+            <p>@T("Please, follow the steps to continue the registration procedure.")</p>
+        </div>
+
+        <a href="@Url.Action("Index", "Home")" class="text-center">@T("Take me to home")</a>
+    </div><!-- /.form-box -->
+</div><!-- /.register-box -->

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3827DCCD-9020-467C-96D8-50107D4768C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nameless.BeetleTracker</RootNamespace>
+    <AssemblyName>Nameless.BeetleTracker.Framework.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Framework.Impl.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\build\Nameless.BeetleTracker.Framework.Impl.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\lib\Lucene.Net-v4.9.0\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Analysis.Common">
+      <HintPath>..\..\lib\Lucene.Net-v4.9.0\Lucene.Net.Analysis.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.QueryParser">
+      <HintPath>..\..\lib\Lucene.Net-v4.9.0\Lucene.Net.QueryParser.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MailKit.2.0.3\lib\net45\MailKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MimeKit.2.0.3\lib\net45\MimeKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\InMemoryCache.cs" />
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\DatabaseSettings.cs" />
+    <Compile Include="Data\DbProviderSelector.cs" />
+    <Compile Include="Email\SmtpClientSettings.cs" />
+    <Compile Include="Email\EmailService.cs" />
+    <Compile Include="Environment\HostingEnvironment.cs" />
+    <Compile Include="ErrorHandling\ExceptionPolicy.cs" />
+    <Compile Include="EventSourcing\Domains\AggregateDescriptor.cs" />
+    <Compile Include="EventSourcing\Domains\AggregateFactory.cs" />
+    <Compile Include="EventSourcing\Domains\InMemoryRepository.cs" />
+    <Compile Include="EventSourcing\Domains\Repository.cs" />
+    <Compile Include="EventSourcing\Domains\Session.cs" />
+    <Compile Include="EventSourcing\Events\EventStore.cs" />
+    <Compile Include="EventSourcing\Extensions\CacheExtension.cs" />
+    <Compile Include="EventSourcing\Models\EventEntity.cs" />
+    <Compile Include="EventSourcing\Models\SnapshotEntity.cs" />
+    <Compile Include="EventSourcing\Resources\SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EventSourcing\SerializerHelper.cs" />
+    <Compile Include="EventSourcing\Snapshots\SnapshotRepository.cs" />
+    <Compile Include="EventSourcing\Snapshots\SnapshotStore.cs" />
+    <Compile Include="EventSourcing\Snapshots\SnapshotStrategy.cs" />
+    <Compile Include="Internals.cs" />
+    <Compile Include="Localization\Json\LocalizationOptions.cs" />
+    <Compile Include="Localization\Json\FileSystemStringLocalizer.cs" />
+    <Compile Include="Localization\Json\FileSystemStringLocalizerFactory.cs" />
+    <Compile Include="Localization\LocalizerUtil.cs" />
+    <Compile Include="Localization\PluralStringLocalizer.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LoggerFactory.cs" />
+    <Compile Include="Notification\Notifier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PubSub\PublisherSubscriber.cs" />
+    <Compile Include="PubSub\Subscription.cs" />
+    <Compile Include="Search\AnalyzerProvider.cs" />
+    <Compile Include="Search\AnalyzerSelector.cs" />
+    <Compile Include="Search\AnalyzerSelectorResult.cs" />
+    <Compile Include="Search\DocumentIndex.cs" />
+    <Compile Include="Search\IAnalyzerProvider.cs" />
+    <Compile Include="Search\IAnalyzerSelector.cs" />
+    <Compile Include="Search\Index.cs" />
+    <Compile Include="Search\IndexProvider.cs" />
+    <Compile Include="Search\LuceneSettings.cs" />
+    <Compile Include="Search\SearchBit.cs" />
+    <Compile Include="Search\SearchBuilder.cs" />
+    <Compile Include="Search\SearchHit.cs" />
+    <Compile Include="Services\Clock.cs" />
+    <Compile Include="Settings\JsonSettingsStorage.cs" />
+    <Compile Include="Text\DataBinder.cs" />
+    <Compile Include="Text\Exceptions\ExpressionPropertyNotFoundException.cs" />
+    <Compile Include="Text\Exceptions\IndexerAccessorNotFoundException.cs" />
+    <Compile Include="Text\FormatTextExpression.cs" />
+    <Compile Include="Text\Interpolator.cs" />
+    <Compile Include="Text\LiteralTextExpression.cs" />
+    <Compile Include="Text\StringPadderFormatProvider.cs" />
+    <Compile Include="Text\TextExpression.cs" />
+    <Compile Include="Utilities\ObjectCloner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EventSourcing\Resources\SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Core\Nameless.BeetleTracker.Core.csproj">
+      <Project>{f767d056-af41-426c-88f6-f66899967bef}</Project>
+      <Name>Nameless.BeetleTracker.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nameless.BeetleTracker.Framework\Nameless.BeetleTracker.Framework.csproj">
+      <Project>{8db9729d-8f5b-460d-be5d-edf862bb6027}</Project>
+      <Name>Nameless.BeetleTracker.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EventSourcing\Resources\CreateSnapshot.sql" />
+    <Content Include="EventSourcing\Resources\CreateEvent.sql" />
+    <Content Include="EventSourcing\Resources\ListSnapshots.sql" />
+    <Content Include="EventSourcing\Resources\ListEvents.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

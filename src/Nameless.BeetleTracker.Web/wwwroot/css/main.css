@@ -1,0 +1,31 @@
+﻿/* validation group */
+div.validation-summary-errors {
+    background-color: #EBABAB;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+}
+
+div.validation-summary-errors ul {
+    margin: 0;
+    padding: 0 0 0 25px;
+}
+
+div.validation-summary-errors ul li {
+    color: #D50909;
+    font-size: 0.8em;
+}
+
+/* input icon left side */
+div .form-group.icon-left-side {
+    position: relative !important;
+}
+
+div input.form-control.icon-left-side {
+    padding-left: 32px;
+}
+
+div span.icon-left-side {
+    position: absolute !important;
+    top: 12px;
+    left: 12px;
+}

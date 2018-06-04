@@ -1,0 +1,1 @@
+INSTALL COLLECTION IMMUTABLE: Install-Package System.Collections.Immutable
